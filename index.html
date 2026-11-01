@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shasha ❤️</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/js.js" defer></script>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+
+    <main class="card" id="firstPage">
+        <div class="emoji">🎀💗🎂</div>
+        <h1>Happy Birthday,<br>Shasha ma love ❤️</h1>
+        <p class="subtitle">Today is all about you, my favorite person!</p>
+
+        <h2>Are you ready for your surprise? 🥹</h2>
+
+        <div class="buttons">
+            <button class="yes" onclick="showSurprise()">YES 💖</button>
+            <button class="no" onclick="sayNo()">NO 🙈</button>
+        </div>
+
+        <p id="message"></p>
+    </main>
+
+    <main class="card surprise hidden" id="secondPage">
+        <div class="emoji">💌✨🌷</div>
+        <h1>OMG, Shasha! 💗</h1>
+        <p class="subtitle">Maryem is waiting for you...</p>
+
+        <div class="music-box">
+            <audio
+                id="birthdayMusic"
+                controls
+                preload="auto"
+                src="audio/nano.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <p id="musicMessage">Press play and enjoy the song 🎶❤️</p>
+
+        <div class="buttons">
+            <button class="yes" onclick="playMusic()">Play the song 🎵</button>
+            <button class="no" onclick="goBack()">Back 🔙</button>
+        </div>
+    </main>
+</body>
+</html>
