@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #ffc4dc, #f9d8ff);
+    overflow-x: hidden;
+    color: #8b3159;
+    position: relative;
+}
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    top: -10%;
+    font-size: 22px;
+    color: rgba(255, 105, 180, 0.65);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(110vh) scale(1.2) rotate(15deg); opacity: 0; }
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    padding: 45px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.82);
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(183, 71, 120, 0.2);
+    animation: appear 0.8s ease;
+    z-index: 2;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.emoji { font-size: 45px; margin-bottom: 20px; }
+
+h1 {
+    font-size: clamp(30px, 6vw, 46px);
+    color: #e34f91;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.subtitle { font-size: 16px; margin-bottom: 30px; color: #a75a7d; }
+
+h2 { font-size: 21px; line-height: 1.6; margin: 20px 0; }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 14px 22px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover { transform: translateY(-2px); }
+
+button.yes {
+    background: linear-gradient(135deg, #ff7eb6, #ff5ca8);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 111, 178, 0.35);
+}
+
+button.no {
+    background: linear-gradient(135deg, #f8d9e8, #f4bfe0);
+    color: #8b3159;
+}
+
+.hidden { display: none; }
+
+#message, #musicMessage {
+    min-height: 24px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #a7547a;
+}
+
+.music-box {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(224, 118, 170, 0.2);
+}
+
+.music-box audio { width: 100%; display: block; margin-top: 6px; }
+
+@media (max-width: 520px) {
+    .card { padding: 35px 18px; }
+    .buttons { flex-direction: column; }
+    button { width: 100%; }
+}
